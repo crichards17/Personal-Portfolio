@@ -7,4 +7,4 @@ How-to:
 Visit the page hosted at https://crichards17.github.io/Personal-Portfolio/
 
 Screenshot:
-![portfolio demo](/Assets/Images/screencap.png)
+![portfolio demo](/Assets/Images/screencap.PNG)
