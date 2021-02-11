@@ -1,0 +1,221 @@
+/* Basic CSS reset */
+* {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* Define page-wide color schemes for reuse */
+:root {
+    --forestGreen: #1a4e32;
+    --soft: rgb(233, 242, 243);
+    --backgroundGrey: rgb(47, 49, 49);
+    --highlight: #f3f6f7;
+}
+
+/* Config for full-page flexbox, background color */
+body {
+    display: flex;    
+    flex-wrap: wrap;
+    padding: 1em;
+    background-color: var(--soft);
+}
+
+/* Set header width */
+header {
+    flex-basis: 100%;
+}
+
+/* Title box color, sizing, border */
+.title-box {
+    background-color: var(--backgroundGrey);
+    flex-basis: 100%;
+    height: 8em;
+    border-radius: 1em 1em 0 0;
+}
+
+/* Title styling */
+.title-box h1 {
+    color: var(--soft);
+    font-size: 250%;
+    position: relative;
+    left: 1em;
+    top: 1em;
+}
+
+/* Nav positioning and font formatting */
+header nav {
+    padding-top: 50px;
+    margin-right: 20px;
+    float: right;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 120%;
+    color: var(--soft);
+}
+
+/* Nav items styling */
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    color: var(--soft);
+}
+
+/* Subtitle box background image and positioning */
+.subtitle-box {
+    background-image: url("../Images/subtitle.jpg");
+    background-size: 100%;
+    width: 100%;
+    height: 8em;
+    border-radius: 0 0 1em 1em;
+}
+
+/* Portrait image positioning and style */
+.portrait-box {
+    position: relative;
+    display: inline-block;
+    left: 40px;
+    top: 10px;
+    background-color: var(--backgroundGrey);
+    border-radius: 1em;
+}
+
+.portrait-box img {
+    width: 82px;
+    height: 100px;
+    margin: 2px;
+    object-fit: fill;
+    border-radius: 1em;
+}
+
+/* Subtitle positioning and styling */
+.subtitle-box h1 {
+    margin-top: 45px;
+    padding: 5px 10px;
+    float: right;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 150%;
+    color: var(--soft);
+    background-color: var(--backgroundGrey);
+    border-radius: 1em 0 0 1em;
+}
+
+/* Main content flow */
+.row {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    background-color:var(--highlight);
+    border-radius: 1em;
+}
+
+/* Content labels */
+.row h2 {
+    flex-basis: 100%;
+    text-align: center;
+    border-bottom: solid var(--forestGreen);
+    border-right: none;
+    padding: 0.5em;
+    align-self:flex-start;
+    color: var(--forestGreen);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 170%;
+}
+
+/* About and Contact Me contents */
+.row p {
+    padding: 0.5em;
+    font-size: 110%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    flex-basis: 100%;
+    text-align: left;
+}
+
+/* Content flexbox */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    justify-content: space-around;
+}
+
+/* Application container cards, images, and labels*/
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    padding: 0.5em;
+    opacity: 60%;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 1em;
+}
+
+.card h3 {
+    margin-top: 5px;
+    color: var(--forestGreen);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Hover behavior */
+.card:hover {
+    opacity: 100%;
+}
+
+.card img:hover {
+    box-shadow: 5px 5px var(--forestGreen);
+}
+
+/* Special-case for larger first item */
+#first-card {
+    flex-basis: 100%;
+}
+
+#first-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Contact entries */
+.contact-item {
+    align-self: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 110%;
+}
+
+/* Set breakover from mobile to tablet+ display */
+@media screen and (min-width:768px) {
+    
+    /* Section labels along left side */
+    .row h2 {
+        flex-basis: 20%;
+        text-align: right;
+        padding-bottom: 40px;
+        border-right: solid var(--forestGreen);
+        border-bottom: none;
+    }
+
+    /* Section content alongside labels */
+    .card-container {
+        flex-basis: 80%;
+    }
+    
+    /* Cards in two rows (except special-cased first item) */
+    .card {
+        flex-basis: 50%;
+    }
+}
